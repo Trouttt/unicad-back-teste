@@ -20,7 +20,7 @@ const dataSourceOptions: DataSourceOptions = {
   database: process.env.DB_DATABASE,
   ssl: true,
   migrations: [migrationsDir],
-  entities: ['dist/src/modules/**/*.entity.js'],
+  entities: ['dist/src/modules/**/entities/*.entity.js'],
   synchronize: false,
 };
 
