@@ -11,7 +11,7 @@ import { DeliveryEntity } from './entities/delivery.entity';
 export class DeliveriesService {
   constructor(
     @InjectRepository(DeliveryEntity)
-    public readonly deliveryRepository: Repository<DeliveryEntity>,
+    public deliveryRepository: Repository<DeliveryEntity>,
   ) {}
 
   async create(createDeliveryDto: CreateDeliveryDto) {
