@@ -43,7 +43,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     this.database = configService.get<string>('DB_DATABASE', {
       infer: true,
     });
-    this.entities = ['dist/src/modules/**/entities/*.entity.js'];
+    this.entities = ['src/modules/**/entities/*.entity.ts'];
     this.ssl =
       configService.get<string>('DB_SSL', {
         infer: true,
