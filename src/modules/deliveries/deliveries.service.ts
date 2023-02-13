@@ -21,7 +21,7 @@ export class DeliveriesService {
   }
 
   async findAll(pageOptionsDto: PageOptionsDto) {
-    console.log(DeliveryEntity);
+    console.log(Reflect.getMetadataKeys(DeliveryEntity), 'updated');
     console.log('cheguei aqui');
     const {
       [0]: data,
