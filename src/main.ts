@@ -21,6 +21,7 @@ async function bootstrap() {
       'Access-Control-Allow-Headers',
       'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
     );
+    res.setHeader('Access-Control-Max-Age', 600);
     next();
   });
   const config = new Swagger();
