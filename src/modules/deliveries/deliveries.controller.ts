@@ -46,6 +46,10 @@ export class DeliveriesController {
   findAll(
     @Query() pageOptionsDto: PageOptionsDto,
   ): Promise<PageDto<DeliveryEntity>> {
-    return this.deliveriesService.findAll(pageOptionsDto);
+    try {
+      return this.deliveriesService.findAll(pageOptionsDto);
+    } catch (e) {
+      return e;
+    }
   }
 }
