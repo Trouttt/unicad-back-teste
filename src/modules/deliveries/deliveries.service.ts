@@ -30,7 +30,7 @@ export class DeliveriesService {
         take: pageOptionsDto.take,
         skip: pageOptionsDto.skip,
       });
-    console.log('teste');
+    console.log('testee');
     const pageMetaDataDto = new PageMetaDataDto({
       item_count: itemCount,
       page_options_dto: pageOptionsDto,
