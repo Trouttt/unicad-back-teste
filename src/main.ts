@@ -7,11 +7,7 @@ import validationOptions from './shared/infra/config/validation-pipe/validate-pi
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    cors: {
-      origin: '*',
-      allowedHeaders: '*',
-      methods: ['GET', 'POST'],
-    },
+    cors: true,
   });
   app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
