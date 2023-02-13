@@ -1,4 +1,5 @@
 import * as dotenv from 'dotenv';
+import { DeliveryEntity } from 'src/modules/deliveries/entities/delivery.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
 dotenv.config();
@@ -20,7 +21,7 @@ const dataSourceOptions: DataSourceOptions = {
   database: process.env.DB_DATABASE,
   ssl: true,
   migrations: [migrationsDir],
-  entities: ['./dist/src/modules/**/entities/*.entity.{js,ts}'],
+  entities: [DeliveryEntity],
   synchronize: false,
 };
 
