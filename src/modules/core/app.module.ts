@@ -1,10 +1,11 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from '../../shared/typeorm/config/typeorm-config.service';
 import { DeliveriesModule } from '../deliveries/deliveries.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import * as cors from 'cors';
 
 @Module({
   imports: [
@@ -18,4 +19,8 @@ import { AppService } from './app.service';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(cors()).forRoutes('*');
+  }
+}
