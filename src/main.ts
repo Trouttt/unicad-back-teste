@@ -7,7 +7,10 @@ import validationOptions from './shared/infra/config/validation-pipe/validate-pi
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
-    cors: true,
+    cors: {
+      origin: 'https://unicad-front-teste.vercel.app/',
+      methods: ['GET', 'POST'],
+    },
   });
 
   const config = new Swagger();
