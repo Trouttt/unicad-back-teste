@@ -25,7 +25,8 @@
     "typeorm:generate": "typeorm-ts-node-commonjs -d ormconfig-migrations.ts migration:generate",
     "typeorm:migrations:run": "typeorm-ts-node-commonjs -d ormconfig-migrations.ts migration:run",
     "typeorm:migrations:revert": "typeorm-ts-node-commonjs -d ormconfig-migrations.ts migration:revert",
-    "typeorm:migrations:show": "typeorm-ts-node-commonjs -d ormconfig-migrations.ts migration:show"
+    "typeorm:migrations:show": "typeorm-ts-node-commonjs -d ormconfig-migrations.ts migration:show",
+    "vercel-build": "typeorm:migrations:run"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
