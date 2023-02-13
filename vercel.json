@@ -11,12 +11,12 @@
   "routes": [
     {
       "src": "/",
-      "dest": "./src/modules/app.controller.ts",
+      "dest": "src/main.ts",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     },
     {
       "src": "/deliveries",
-      "dest": "src/modules/deliveries/deliveries.controller.ts",
+      "dest": "src/main.ts",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]
