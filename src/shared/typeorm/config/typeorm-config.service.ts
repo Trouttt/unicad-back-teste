@@ -67,7 +67,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       username: this.username,
       password: this.password,
       database: this.database,
-      entities: [DeliveryEntity],
+      entities: ['dist/src/modules/deliveries/entities/delivery.entity'],
       synchronize: false,
       ssl: this.ssl,
       logging: this.logging,
