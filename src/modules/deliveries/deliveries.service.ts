@@ -21,6 +21,7 @@ export class DeliveriesService {
   }
 
   async findAll(pageOptionsDto: PageOptionsDto) {
+    console.log('cheguei aqui');
     const {
       [0]: data,
       [1]: itemCount,
@@ -30,6 +31,7 @@ export class DeliveriesService {
         take: pageOptionsDto.take,
         skip: pageOptionsDto.skip,
       });
+    console.log('passei daqui');
     const pageMetaDataDto = new PageMetaDataDto({
       item_count: itemCount,
       page_options_dto: pageOptionsDto,
