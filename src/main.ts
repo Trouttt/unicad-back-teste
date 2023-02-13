@@ -10,7 +10,7 @@ async function bootstrap() {
   app.enableCors();
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
-    res.headers('access-control-allow-origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     // another common pattern
     //res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
     res.setHeader(
