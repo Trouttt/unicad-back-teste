@@ -21,7 +21,7 @@ const dataSourceOptions: DataSourceOptions = {
   database: process.env.DB_DATABASE,
   ssl: true,
   migrations: [migrationsDir],
-  entities: [DeliveryEntity],
+  entities: ['dist/src/modules/deliveries/entities/delivery.entity'],
   synchronize: false,
 };
 
