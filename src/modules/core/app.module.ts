@@ -5,7 +5,6 @@ import { TypeOrmConfigService } from '../../shared/typeorm/config/typeorm-config
 import { DeliveriesModule } from '../deliveries/deliveries.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import * as cors from 'cors';
 
 @Module({
   imports: [
@@ -19,8 +18,4 @@ import * as cors from 'cors';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(cors()).forRoutes('*');
-  }
-}
+export class AppModule {}
