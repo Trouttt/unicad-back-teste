@@ -5,7 +5,6 @@ import { CreateDeliveryDto } from './dto/create-delivery.dto';
 import { DeliveryEntity } from './entities/delivery.entity';
 import { PageOptionsDto } from '../../shared/dtos/page-options.dto';
 import { PageDto } from '../../shared/dtos/page.dto';
-import { Repository } from 'typeorm';
 
 const createDeliveryDto: CreateDeliveryDto = {
   name: 'LEONARDO',
