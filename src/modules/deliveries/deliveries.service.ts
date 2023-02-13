@@ -21,6 +21,7 @@ export class DeliveriesService {
   }
 
   async findAll(pageOptionsDto: PageOptionsDto) {
+    console.log(DeliveryEntity);
     console.log('cheguei aqui');
     const {
       [0]: data,
