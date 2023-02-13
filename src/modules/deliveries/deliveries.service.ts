@@ -15,6 +15,8 @@ export class DeliveriesService {
   ) {}
 
   async create(createDeliveryDto: CreateDeliveryDto) {
+    console.log('oi');
+
     const delivery = this.deliveryRepository.create(createDeliveryDto);
     delivery.date = new Date().toLocaleString();
     return this.deliveryRepository.save(delivery);
