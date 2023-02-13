@@ -9,6 +9,10 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: {
       origin: '*',
+      allowedHeaders: [
+        'Access-Control-Allow-Origin',
+        'https://unicad-front-teste.vercel.app',
+      ],
       methods: ['GET', 'POST'],
     },
   });
