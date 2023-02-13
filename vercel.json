@@ -16,7 +16,7 @@
     },
     {
       "src": "/deliveries",
-      "dest": "src/modules/deliveries/deliveries.module.ts",
+      "dest": "src/modules/deliveries/deliveries.controller.ts",
       "methods": ["GET", "POST", "PUT", "DELETE"]
     }
   ]
