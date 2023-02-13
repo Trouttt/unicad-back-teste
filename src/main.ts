@@ -4,12 +4,13 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './modules/core/app.module';
 import { Swagger } from './shared/infra/config/swagger/config';
 import validationOptions from './shared/infra/config/validation-pipe/validate-pipe-options';
+import cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: true,
   });
-  app.enableCors();
+  app.use(cors());
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
