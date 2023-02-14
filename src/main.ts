@@ -9,6 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: {
       origin: '*',
+      allowedHeaders: ['Authorization', 'Content-Type'],
     },
   });
   app.use((req, res, next) => {
@@ -20,8 +21,7 @@ async function bootstrap() {
     );
     res.setHeader(
       'Access-Control-Allow-Headers',
-
-      'Authorization, X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
     );
     res.setHeader('Access-Control-Max-Age', 600);
     next();
