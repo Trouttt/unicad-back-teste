@@ -9,6 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
     cors: {
       origin: '*',
+      preflightContinue: false,
     },
   });
   app.use((req, res, next) => {
