@@ -14,17 +14,12 @@ export class DeliveriesService {
     public deliveryRepository: Repository<DeliveryEntity>,
   ) {}
 
-  async create(createDeliveryDto: CreateDeliveryDto) {
-    console.log('oi');
-
+  async create(createDeliveryDto: CreateDeliveryDto): Promise<DeliveryEntity> {
     const delivery = this.deliveryRepository.create(createDeliveryDto);
-    delivery.date = new Date().toLocaleString();
     return this.deliveryRepository.save(delivery);
   }
 
   async findAll(pageOptionsDto: PageOptionsDto) {
-    console.log(Reflect.getMetadataKeys(DeliveryEntity), 'updated');
-    console.log('cheguei aqui');
     const {
       [0]: data,
       [1]: itemCount,
@@ -34,7 +29,6 @@ export class DeliveriesService {
         take: pageOptionsDto.take,
         skip: pageOptionsDto.skip,
       });
-    console.log('passei daqui');
     const pageMetaDataDto = new PageMetaDataDto({
       item_count: itemCount,
       page_options_dto: pageOptionsDto,
